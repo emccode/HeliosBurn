@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     url(r'^session/$', session.rest),
     url(r'^session/(\d+?)/$', session.rest),
     url(r'^testplan/$', testplan.rest),
+    url(r'^testplan/(\d+?)/$', testplan.rest),
     url(r'^auth/login/$', auth.login),
 
 )

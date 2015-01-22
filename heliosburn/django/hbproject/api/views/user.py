@@ -11,7 +11,7 @@ import json
 def rest(request, *pargs):
     """
     Calls python function corresponding with HTTP METHOD name. 
-    Calls with incomplete arguments will return HTTP 400 with a description and argument list.
+    Calls with incomplete arguments will return HTTP 400
     """
     if request.method == 'GET':
         rest_function = get
@@ -28,7 +28,7 @@ def rest(request, *pargs):
         return rest_function(request, *pargs)
     except TypeError:
             r = JsonResponse({"error": "arguments mismatch"})
-            r.status_code = 400 # 400 "BAD REQUEST"
+            r.status_code = 400
             return r
 
 
